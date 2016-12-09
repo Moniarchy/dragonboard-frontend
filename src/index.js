@@ -7,6 +7,8 @@ import { Router, Route, browserHistory } from 'react-router'
 import App from './components/App'
 import Dashboard from './components/Dashboard'
 import reducer from './reducers'
+import FormContainer from './components/FormContainer'
+
 import './styles/index.css'
 
 const initialState = {}
@@ -22,6 +24,7 @@ ReactDOM.render((
     <Router history={browserHistory}>
       <Route path='/' component={App} />
       <Route path='dashboard' component={Dashboard} />
+      <Route path='/form' component={FormContainer} />
     </Router>
   </Provider>
 ), document.getElementById('root'))

@@ -1,0 +1,93 @@
+select:hover {
+  cursor: pointer;
+}
+
+.widget-form-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.widget-form-header {
+  width: 100%;
+}
+
+.widget-form-buttons {
+  width: 100%;
+}
+
+.widget-form {
+  flex: 1 1 60%;
+  padding-right: 80px;
+}
+
+.widget-form-preview {
+  flex: 1 1 33.5%;
+}
+
+.widget-form-field {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.widget-form-field:focus {
+  border: 1px solid red;
+}
+
+.widget-form-field > *:not(label) {
+  flex: 1 1 55%;
+  padding-left: 15px;
+  background: #fff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.widget-form-field > label {
+  background-color: #585858;
+  flex: 1 1 40%;
+  padding: 12px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.widget-form-fields-radio-container {
+  display: flex;
+  align-items: center;
+  color: #161616;
+}
+
+.widget-form-field-nested-dropdown-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.widget-form-field-nested-dropdown-container label {
+  background-color: #585858;
+  flex: 1 1 40%;
+  padding: 12px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.widget-form-field-nested-dropdown-container > *:not(label) {
+  flex: 1 1 55%;
+  padding-left: 15px;
+  background: #fff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.button {
+  padding: 10px;
+}
+
+.button-submit {
+  background: green;
+  color: white;
+}
+
+.button-cancel {
+  background: grey;
+}
