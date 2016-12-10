@@ -2,6 +2,10 @@ select:hover {
   cursor: pointer;
 }
 
+.widget {
+  display: none;
+}
+
 .widget-form-container {
   display: flex;
   flex-wrap: wrap;

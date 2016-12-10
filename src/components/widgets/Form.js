@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { RadioGroup, Radio } from 'react-radio-group'
 import Button from '../Button.js'
+import $ from 'jquery'
 import "../../styles/form.css"
 
 export default class Form extends Component {
   constructor( props ) {
     super( props )
     this.state = {}
-    this.setFieldState = this.setFieldState.bind( this )
+    // this.setFieldState = this.setFieldState.bind( this )
   }
 
   componentWillMount() {
@@ -45,7 +46,16 @@ export default class Form extends Component {
       widgetData.y = '10px'
       widgetData.x = '20px'
     }
-    console.log('You submitted a widget with this data:', widgetData)
+    $.ajax({
+      method: 'POST',
+      url: `http://localhost:4000/api/v1/dashboards/584b575c6faf1d0af0e7e22c/widgets`,
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      // headers: {"Access-Control-Allow-Origin":"something"},
+      data: JSON.stringify(widgetData),
+    }).then(() => {
+      console.log('You submitted a widget with this data:', widgetData)
+    })
   }
 
   render() {
@@ -62,7 +72,7 @@ export default class Form extends Component {
           {sections.map(( section, id ) => (
               <Section
                 {...section}
-                setFieldState={this.setFieldState}
+                setFieldState={this.setFieldState.bind(this)}
                 state={this.state}
                 key={`section-${id}`}
               />
@@ -134,7 +144,7 @@ class Field extends Component {
     } else if( type === 'radio' ) {
       return <RadioField {...this.props} />
     } else {
-      return <div>Not a valid component type >_<</div>
+      return <div>Not a valid component type</div>
     }
   }
 }
