@@ -3,7 +3,19 @@ import { RadioGroup, Radio } from 'react-radio-group'
 import Button from '../Button.js'
 import "../../styles/form.css"
 
+const FormContainer = "widget-form-container"
+const FormHeader = "widget-form-header"
+const FormButtons = "widget-form-buttons"
+const FormPreview = "widget-form-preview"
+const FormField = "widget-form-field"
+const FormFieldsSelect = "widget-form-fields-select"
+const FormFieldsRadioSection = "widget-form-fields-radio-section"
+const FormFieldsRadioContainer = "widget-form-fields-radio-container"
+const FormFieldsRadioFieldsNestedDropdownContainer = "widget-form-field-nested-dropdown-container"
+
+
 export default class Form extends Component {
+
   constructor( props ) {
     super( props )
     this.state = {}
@@ -38,14 +50,13 @@ export default class Form extends Component {
     })
   }
 
-  submitWidget( state ) {
+  submit( state ) {
     const widgetData = {}
     for ( let key in state ) {
       widgetData[key] = state[key]
       widgetData.y = '10px'
       widgetData.x = '20px'
     }
-    console.log('You submitted a widget with this data:', widgetData)
   }
 
   render() {
@@ -57,7 +68,7 @@ export default class Form extends Component {
           <h1>{type}</h1>
         </div>
         <form
-          onSubmit={() => this.submitWidget( this.state )}
+          onSubmit={ this.submit.bind( this )}
           className="widget-form">
           {sections.map(( section, id ) => (
               <Section
@@ -73,9 +84,7 @@ export default class Form extends Component {
             <Button content="Cancel" type="cancel"/>
           </div>
         </form>
-        <div className="widget-form-preview">
           <Preview image={image} description={description}/>
-        </div>
       </div>
     )
   }
@@ -134,7 +143,7 @@ class Field extends Component {
     } else if( type === 'radio' ) {
       return <RadioField {...this.props} />
     } else {
-      return <div>Not a valid component type >_<</div>
+      return <div>Not a valid component type </div>
     }
   }
 }

@@ -9,9 +9,9 @@ class App extends Component {
     return (
       <div className='home-page-wrapper'>
         <Dashboard/>
-        <HomeNav />
+        {/* <HomeNav />
         <HomeBody />
-        <HomeFooter />
+        <HomeFooter /> */}
       </div>
     )
   }
