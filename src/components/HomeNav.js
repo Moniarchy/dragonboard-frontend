@@ -6,6 +6,7 @@ import '../styles/home_nav.css'
 import '../styles/home_nav_dropdown_menu.css'
 
 class HomeNav extends Component {
+
   render () {
     return (
       <nav className='home-nav clearfix'>
@@ -29,8 +30,17 @@ class HomeNav extends Component {
               </div>
               <a className='login-nav' href='#'>LOGIN</a>
               <a className='demo-button' href='#'>BOOK A DEMO</a>
-              <input className='trial-input' type='text' placeholder='Email address' />
-              <a className='nav-trial-button' href='#'>Free Trial</a>
+              <form action='/register'>
+                <input
+                  className='trial-input'
+                  name="email"
+                  type='text'
+                  placeholder='Email address' />
+                <input
+                className='nav-trial-button'
+                type="submit"
+                value="FREE TRIAL" />
+              </form>
             </div>
           </div>
           <HomeNavHamburger />

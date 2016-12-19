@@ -161,10 +161,12 @@
   transition: background-color 0.3s ease;
   background-color: #8dc63f;
   border-radius: 0 4px 4px 0;
+  height: 37px;
   max-height: 38px;
   padding: 8px 10px;
   margin-left: 0;
   color: #fff;
+  border: none;
 }
 
 .nav-trial-button:hover {

@@ -15,7 +15,7 @@ class Overlay extends Component {
             </div>
 
             <div className='overlay-buttons'>
-              <a href='#' className='flat-button trial-button'>
+              <a href='/register' className='flat-button trial-button'>
                 Start your free trial
               </a>
               <a href='#' className='flat-button demo-button'>Book a demo</a>
