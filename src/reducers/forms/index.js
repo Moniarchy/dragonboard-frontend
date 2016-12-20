@@ -1,17 +1,22 @@
-import * as constants from '../../actions/forms/constants'
+import { FORM_FIELD_UPDATE, FORM_RESET } from '../../actions/forms/constants'
 // import * from './registrationFormReducer'
 
-const formReducer = ( state = [], action ) => {
+const initialState = {
+  values: {}
+}
+
+const formReducer = ( state = initialState, action ) => {
   switch( action.type ) {
-    case constants.FORM_RESET:
+    case FORM_RESET:
       console.log('resetForm()')
-      return state
-    case constants.FORM_FIELD_UPDATE:
+      return initialState
+    case FORM_FIELD_UPDATE:
       console.log('fieldUpdate')
-      return state
-    case constants.FORM_SUBMIT:
-      console.log('formSubmit')
-      return state
+      return Object.assign({}, state, {
+        values: Object.assign({}, state.values, {
+          [action.name]: action.value
+        })
+      })
     default:
       console.log('no')
       return state
