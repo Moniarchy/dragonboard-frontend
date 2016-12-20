@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
-
+import * as actions from '../actions/forms'
 
 export default class RegistrationForm extends Component {
   constructor( props) {
+    console.log(actions.formSubmit, 'form submit! -_-')
     super ( props )
     this.state = {
       name: '',
       email: '',
       password: '',
       phone_number: '',
-      company: ''}
+      company: ''
+    }
   }
 
   handleInput = ( event, stateKey ) => {
